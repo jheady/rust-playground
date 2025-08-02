@@ -1,0 +1,4 @@
+{
+  "name": "Rust",
+  "image": "rust:1.88"
+}
