@@ -1,4 +1,6 @@
 {
-  "name": "Rust",
-  "image": "rust:1.88"
+  "name": "rustPlayground",
+  "dockerComposeFile": "docker-compose.yml",
+  "service": "devos",
+  "workspaceFolder": "/rustpg"
 }
