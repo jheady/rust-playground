@@ -6,8 +6,7 @@ WORKDIR /rustpg
 # Install needed development tools
 RUN apt-get update && \
     apt-get install --no-install-recommends -y \
-    ca-certificates curl file build-essential \
-    autoconf automake autotools-dev libtools xutils-dev
+    ca-certificates curl file build-essential
 
 RUN curl --proto '=https' --tlsv1.2 https://sh.rustup.rs -sSf | sh
 
