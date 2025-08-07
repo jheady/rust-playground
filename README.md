@@ -1,6 +1,6 @@
 # Rust Playground
 
-This repository is for learning and practicing rust programming. It's designed for use within a devcontainer. Either with VSCode and the devcontainer extension, using [[DevPod|https://devpod.sh/]], or some other devcontainer process.
+This repository is for learning and practicing rust programming. It's designed for use within a devcontainer. Either with VSCode and the devcontainer extension, using [DevPod](https://devpod.sh/), or some other devcontainer process.
 
 ## Instructions for Use
 
