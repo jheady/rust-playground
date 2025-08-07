@@ -2,19 +2,21 @@ FROM debian:bookworm-20250721
 
 
 # Install needed development tools
-RUN apt-get update && \
-    apt-get install --no-install-recommends -y \
-    ca-certificates curl file build-essential bash-completion && \
-    mkdir -p /etc/bash_completion.d
+RUN <<HERE
+apt-get update
+apt-get install --no-install-recommends -y \
+ca-certificates curl file build-essential bash-completion git
+mkdir -p /etc/bash_completion.d
+HERE
 
 # Assign rust environment variables
-ENV RUSTUP_HOME=/etc/rust/rustup CARGO_HOME=/etc/rust/cargo
+ENV RUSTUP_HOME=/usr/local/rust/rustup CARGO_HOME=/usr/local/rust/cargo
 
 # Make the directories, install tooling, and set shell features
 RUN <<HERE
-mkdir -p /etc/rust/{rustup,cargo} && mkdir /rustpg
+mkdir -p /usr/local/rust/{rustup,cargo} && mkdir /rustpg
 curl --proto '=https' --tlsv1.2 https://sh.rustup.rs -sSf | sh -s -- -y --component rust-analyzer
-. /etc/rust/cargo/env && echo ". /etc/rust/cargo/env" > /etc/profile.d/cargo_path.sh
+. /usr/local/rust/cargo/env && echo ". /usr/local/rust/cargo/env" > /etc/profile.d/cargo_path.sh
 rustup completions bash > /etc/bash_completion.d/rustup.bash-completion
 HERE
 
