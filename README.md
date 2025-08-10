@@ -4,10 +4,8 @@ This repository is for learning and practicing rust programming. It's designed f
 
 ## Instructions for Use
 
-Clone the repository. The devcontainer.json file sits in the .devcontainer directory. It will use the docker-compose.yml and Dockerfile to build and launch a docker dontainer.
+Clone the repository. The devcontainer.json file sits in the .devcontainer directory. It will use the docker-compose.yml and Dockerfile to build and launch a docker container. Although intended for use as a devcontainer, the docker-compose file can be used alone to build and start a container.
 
-The container uses the debian bookworm-20250721 base. Then installs tools needed for development work. After the tools are installed by apt, the rustup script is downloaded and ran. The environment is configured with rust binaries in the $PATH and bash completions for rust. Finally a user is created with uid of 1000 to match with the ownership of the files and directories mounted from the root filesystem into container.
+Originally configured to use a debian bookworm base and then install needed build libraries and tools. Migrated to using the official rust 1.89.0 image. This decision was made due to issues with rust-analyzer inside the container.
 
-The Dockerfile creates the /rustpg directory and the root of the container filesystem. The parent of the .devcontainer directory is then mounted onto that directory.
-
-While there is a rust container in the docker hub, this repository can also work as the base for a rust application container.
+The /rustpg directory is now mounted as a docker volume. This ensures that the devcontainer can be used for various projects during the learning proces without needing to worry about accidentally adding any of the project work into the git repository.
