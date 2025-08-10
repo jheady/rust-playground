@@ -7,7 +7,10 @@ services:
     # Mapping parent of .devcontainer folder into the container
     # This ensures that all the code is available for version control
     volumes:
-      - ..:/rustpg
+      - rustpg:/rustpg
 
     # Adding sleep command so container remains running
     command: sleep infinity
+
+volumes:
+  rustpg:
