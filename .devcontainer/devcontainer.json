@@ -1,6 +1,6 @@
 {
-  "name": "rustPlayground",
+  "name": "rust-playground",
   "dockerComposeFile": "docker-compose.yml",
-  "service": "devos",
+  "service": "rustpg",
   "workspaceFolder": "/rustpg"
 }

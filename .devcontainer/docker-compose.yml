@@ -1,5 +1,5 @@
 services:
-  devos:
+  rustpg:
     build:
       context: ..
       dockerfile: .devcontainer/Dockerfile
@@ -14,3 +14,4 @@ services:
 
 volumes:
   rustpg:
+    name: "rustpg"
